@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: lihis_kitchen_development
+
+test:
+  <<: *default
+  database: lihis_kitchen_test
+
+production:
+  <<: *default
+  database: lihis_kitchen_production
+  username: lihis_kitchen
+  password: <%= ENV["LIHIS_KITCHEN_DATABASE_PASSWORD"] %>
