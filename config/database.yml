@@ -6,7 +6,10 @@ default: &default
 development:
   <<: *default
   database: lihis_kitchen_development
-
+  host: localhost
+  username: yonathanhadas
+  password: postgres
+  
 test:
   <<: *default
   database: lihis_kitchen_test
